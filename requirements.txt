@@ -23,7 +23,7 @@ plotly==2.0.13
 psycopg2==2.7.3
 python-dateutil==2.6.1
 pytz==2017.2
-requests==2.18.4
+requests==2.20.0
 six==1.10.0
 SQLAlchemy==1.1.13
 traitlets==4.3.2

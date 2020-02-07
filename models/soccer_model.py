@@ -1,7 +1,8 @@
-
 # pydata stack
 import pandas as pd
 from setting.conn_db import conn
+
+import plotly.graph_objs as go
 
 ###########################
 # Data Manipulation / Model
@@ -59,7 +60,7 @@ def get_teams(division='', season=''):
     teams = list(teams['team'].sort_values(ascending=True))
     return teams
 
-def get_match_results(division, season, team):
+def get_match_results(division='', season='', team=''):
     '''Returns match results for the selected prompts'''
 
     results_query = (
@@ -76,7 +77,7 @@ def get_match_results(division, season, team):
     return match_results
 
 
-def calculate_season_summary(results):
+def calculate_season_summary(results=''):
     record = results.groupby(by=['result'])['team'].count()
     summary = pd.DataFrame(
         data={
@@ -91,7 +92,7 @@ def calculate_season_summary(results):
     return summary
 
 
-def draw_season_points_graph(results):
+def draw_season_points_graph(results=''):
     dates = results['date']
     points = results['points'].cumsum()
 

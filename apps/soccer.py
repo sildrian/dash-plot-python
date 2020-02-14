@@ -185,5 +185,7 @@ def load_season_points_graph(division, season, team):
     figure = []
     if len(results) > 0:
         figure = draw_season_points_graph(results)
+    
+    # print(figure)
 
     return figure
